@@ -30,14 +30,14 @@ object NetworkUtils {
             e.printStackTrace()
         }
 
-        Log.d(TAG, "Built URI " + url!!)
+        Log.d(TAG, "Built URI " + url)
 
         return url
     }
 
     @Throws(IOException::class)
-    fun getResponseFromHttpUrl(url: URL): String? {
-        val urlConnection = url.openConnection() as HttpURLConnection
+    fun getResponseFromHttpUrl(url: URL?): String? {
+        val urlConnection = url?.openConnection() as HttpURLConnection
         try {
             val ins = urlConnection.inputStream
 
